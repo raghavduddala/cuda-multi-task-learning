@@ -1,0 +1,42 @@
+@startuml 
+left to right direction
+
+
+package "integrated-system-client"{
+    [raw-image-publisher]
+    [prediction-image-subscriber] 
+    
+}   
+
+
+package "server-client-proxy"{
+ [raw-image-subscriber]
+ [raw-img_preprocessor]
+ [preprocessed-image-publisher]
+ [prediction-postprocessor]
+ [tensor-subscriber]
+ [prediction-image-publisher]
+}
+
+cloud "model-server" {
+[model-graph]
+}
+
+[raw-image-publisher] -> raw_img  
+[prediction-image-subscriber] <-segment_depth_img 
+
+raw_img -> [raw-image-subscriber]
+[raw-image-subscriber]->[raw-img_preprocessor]
+[raw-img_preprocessor]->[preprocessed-image-publisher]
+[preprocessed-image-publisher]-> preprocessed_tensor
+[prediction-postprocessor]-> segment_depth_img
+prediction_tensor -> [tensor-subscriber]
+[tensor-subscriber] -> [prediction-postprocessor] 
+[prediction-postprocessor] -> [prediction-image-publisher]
+
+preprocessed_tensor -> [model-graph]
+prediction_tensor <- [model-graph]
+@enduml
+
+
+
