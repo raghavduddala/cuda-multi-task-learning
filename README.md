@@ -2,14 +2,19 @@
 
 This repo would entail the code for an end-to-end multi task learning framework for self-driving perception
 
-#### Links
+## Links
 [Project Kanban Board](https://github.com/users/raghavduddala/projects/2/views/1)
 
-Added Planned Base Components Diagrams 
+--- 
 ![High level System Diagram](https://github.com/raghavduddala/cuda-multi-task-learning/blob/develop/docs/Base_Design_CMTL.drawio.png)
+
+---
 ![Component Diagram](https://github.com/raghavduddala/cuda-multi-task-learning/blob/develop/docs/components.png)
 
+---
+![Custom ML Pipeline Design](https://raw.githubusercontent.com/raghavduddala/cuda-multi-task-learning/design/docs/first-iteration-no-frontend-monitor-drawio.png)
 
+--- 
 
 More to Come! 
 
