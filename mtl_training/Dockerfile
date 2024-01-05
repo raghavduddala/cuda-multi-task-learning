@@ -56,8 +56,10 @@ RUN python3 -m pip install -U setuptools pip \
 # RUN python -m cupyx.tools.install_library --cuda 11.x --library cutensor
 
 # Install the Torch Library 
-RUN python3 -m pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 --index-url https://download.pytorch.org/whl/cu118 
+# RUN python3 -m pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 --index-url https://download.pytorch.org/whl/cu118 
+RUN python3 -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 RUN python3 -m pip install -U xformers 
+RUN python3 -m pip install lightning
 
 # Expose the Workdir of the Image 
 WORKDIR ${WORKSPACE}
